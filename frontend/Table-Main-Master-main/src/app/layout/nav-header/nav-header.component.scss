@@ -1,0 +1,178 @@
+.navbar-container {
+    background-color: white;
+    padding: 10px 0;
+    top: 25px;
+    left: 25px;
+    width: 15%;
+    bottom: 15%;
+    border-radius: 30px;
+    position: fixed;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 920px) {
+        width: 10%;
+
+        @media (max-width: 750px) {
+            top: 25px;
+            left: 0;
+            width: 10%;
+            bottom: 15%;
+            border-radius: 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: fixed;
+        }
+
+        @media (max-width: 686px) {
+            background-color: white;
+            padding: 10px 0;
+            border-radius: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+        }
+    }
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        height: 100%;
+
+        @media (max-width: 686px) {
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-left: 15px;
+
+            @media (max-width: 750px) {
+                margin: 5px;
+            }
+
+            @media (max-width: 686px) {
+                flex-direction: row;
+            }
+
+            svg {
+                width: 25px;
+                height: 40px;
+
+                @media (max-width: 686px) {
+                    width: 45px;
+                    height: 50px;
+                }
+
+                @media (max-width: 450px) {
+                    width: 35px;
+                    height: 40px;
+                }
+            }
+
+            .nav-item {
+                margin: 30px 0 0 0;
+
+                @media (max-width: 686px) {
+                    margin: 5px 10px 5px 10px;
+                }
+
+                .verify {
+                    @media (max-width: 686px) {
+                        display: none !important;
+                    }
+                }
+            }
+
+            .nav-link {
+                color: black;
+                font-weight: bold;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: color 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    color: rgb(31, 140, 195);
+                }
+            }
+
+            .nav-link-user {
+                margin-bottom: 10px;
+                margin-left: 15px;
+                cursor: pointer;
+            }
+
+            @media (max-width: 920px) {
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .btn-wrapper {
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 100%;
+                background-color: rgb(31, 140, 195);
+                border: 1px solid black;
+                border-radius: 7px;
+                padding: 5px;
+                text-align: center;
+
+                &:hover {
+                    .logout {
+                        color: white;
+
+                        svg {
+                            color: white;
+                        }
+                    }
+                }
+
+                .logout {
+                    color: black;
+                    margin: 5px;
+                    text-align: center;
+
+                    svg {
+                        width: 20px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            @media (max-width: 920px) {
+
+                h6 {
+                    display: none;
+                }
+
+                .btn {
+                    background-color: white;
+                    border: none;
+                    padding: 0;
+                }
+
+                margin-top: 15px;
+
+                .logout {
+                    padding: 0;
+                }
+
+                @media (max-width: 686px) {
+                    margin-top: 7px;
+                }
+            }
+        }
+
+    }
+}

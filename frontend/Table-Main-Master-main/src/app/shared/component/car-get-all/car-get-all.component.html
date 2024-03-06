@@ -1,0 +1,56 @@
+<app-nav-header></app-nav-header>
+
+<div class="wrapper">
+    <div class="wrapper-content">
+        <div class="wrapper-search">
+            <form [formGroup]="searchForm" (ngSubmit)="searchCars()">
+                <input type="text" formControlName="name" placeholder="Enter car name">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="row car-row">
+            <div class="col-12 col-md-6" *ngFor="let car of pagedCars$ | async">
+                <div class="card mb-3 sm-mb-0" [routerLink]="['/car-details', car.id]">
+                    <div class="card-body">
+                        <div class="card-head">
+                            <img class="img-fluid" [src]="getSafeImage(car)" alt="Car Image">
+                            <p class="card-text-name">{{car.name}}</p>
+                            <p class="card-text-color">Color: {{car.color}}</p>
+                        </div>
+                        <div class="card-bod row">
+                            <div class="col-6">
+                                <p class="card-text">Number of seats: {{car.numberOfSeats}}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text">EnginePower: {{car.enginePower}}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text">Transmission Type: {{car.transmissionType}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-fott">
+                            <p class="card-price">{{car.price}} EUR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="javascript:void(0)" (click)="setCurrentPage(currentPage - 1)"
+                        [class.disabled]="currentPage === 1">&laquo;</a>
+                </li>
+                <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage === page">
+                    <a class="page-link" href="javascript:void(0)" (click)="setCurrentPage(page)">{{ page }}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:void(0)" (click)="setCurrentPage(currentPage + 1)"
+                        [class.disabled]="currentPage === pages.length">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

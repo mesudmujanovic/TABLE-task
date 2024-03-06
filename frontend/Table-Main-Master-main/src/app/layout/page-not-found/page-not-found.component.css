@@ -1,0 +1,10 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px;
+}
+div img {
+  width: 400px;
+  height: 400px;
+}/*# sourceMappingURL=page-not-found.component.css.map */

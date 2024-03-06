@@ -1,0 +1,23 @@
+<button class="btn btnUpdate" (click)="openModal()">Update Car</button>
+<app-bootstrap-modal-update>
+    <div class="content-wrapper">
+        <form [formGroup]="carForm" (ngSubmit)="onUpdateSubmit()">
+            <div class="name-input">
+                <label for="name">Name:</label>
+                <input type="text" formControlName="name">
+            </div>
+            <div class="file-upload">
+                <label class="file-upload">
+                    <span class="file-upload__text">
+                        Click or Drag file here...
+                    </span>
+                    <input type="file" class="file-upload__input" id="FileUploadInput"
+                        (change)="onFileSelected($event)">
+                </label>
+            </div>
+            <div class="button-wrapper">
+                <button class="button-form" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</app-bootstrap-modal-update>

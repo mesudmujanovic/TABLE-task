@@ -1,0 +1,7 @@
+<button class="btn btn-danger" (click)="openModal()">Delete Car</button>
+
+<app-bootstrap-modal-delete>
+    <p>Are you sure you want to delete this car?</p>
+    <button class="btn btn-warning" (click)="closeModal()">Cancel</button>
+    <button class="btn btn-danger" (click)="deleteItem()">Delete</button>
+</app-bootstrap-modal-delete>

@@ -1,0 +1,98 @@
+<app-nav-header></app-nav-header>
+
+<div class="wrapper">
+    <div class="content-wrapper">
+        <div *ngIf="isLoggedIn; else notLoggedIn">
+            <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+                <div class="name-input">
+                    <label for="name">Name:</label>
+                    <input type="text" formControlName="name">
+                    <div *ngIf="carForm.get('name').invalid && carForm.get('name').touched">
+                        <div *ngIf="carForm.get('name').hasError('required')">Name <span class="error">is
+                                required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="color">Color:</label>
+                    <input type="text" formControlName="color">
+                    <div *ngIf="carForm.get('color').invalid && carForm.get('color').touched">
+                        <div *ngIf="carForm.get('color').hasError('required')">Color <span class="error">is
+                                required</span></div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="numberOfSeats">Number of Seats:</label>
+                    <input type="number" formControlName="numberOfSeats">
+                    <div *ngIf="carForm.get('numberOfSeats').invalid && carForm.get('numberOfSeats').touched">
+                        <div *ngIf="carForm.get('numberOfSeats').hasError('required')">Number of Seats <span
+                                class="error">is required</span></div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="enginePower">Engine Power:</label>
+                    <input type="number" formControlName="enginePower">
+                    <div *ngIf="carForm.get('enginePower').invalid && carForm.get('enginePower').touched">
+                        <div *ngIf="carForm.get('enginePower').hasError('required')">Engine Power <span class="error">is
+                                required</span></div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="transmissionType">Transmission Type:</label>
+                    <input type="text" formControlName="transmissionType">
+                    <div *ngIf="carForm.get('transmissionType').invalid && carForm.get('transmissionType').touched">
+                        <div *ngIf="carForm.get('transmissionType').hasError('required')">Transmission Type <span
+                                class="error">is required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="registrationDate">Registration Date:</label>
+                    <input type="date" formControlName="registrationDate">
+                    <div *ngIf="carForm.get('registrationDate').invalid && carForm.get('registrationDate').touched">
+                        <div *ngIf="carForm.get('registrationDate').hasError('required')">Registration Date <span
+                                class="error">is required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="name-input">
+                    <label for="price">Price:</label>
+                    <input type="text" formControlName="price">
+                    <div *ngIf="carForm.get('price').invalid && carForm.get('price').touched">
+                        <div *ngIf="carForm.get('price').hasError('required')">Price <span class="error">is
+                                required</span></div>
+                    </div>
+                </div>
+                <div class="file-upload">
+                    <label class="file-upload">
+                        <span class="file-upload__text">
+                            Click or Drag file here...
+                        </span>
+                        <span role="presentation" class="file-upload__file-name" id="FileUploadFileName">
+                            {{ selectedFileName }}
+                        </span>
+                        <input type="file" class="file-upload__input" id="FileUploadInput"
+                            (change)="onFileSelected($event)">
+                    </label>
+                </div>
+                <div class="button-wrapper">
+                    <button class="button-form" type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <ng-template #notLoggedIn>
+        <div class=" alert alert-warning" role="alert">
+            <strong>Warning!</strong> Please create an account first to place an ad. Link bellow.
+            <a class="nav-link" routerLink="/createOwner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                </svg>
+                Create Acc
+            </a>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.modal-content {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+button.cancel {
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+  color: #fff;
+}
+
+button.delete {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: #fff;
+  margin: 5px;
+}/*# sourceMappingURL=car-delete.component.css.map */

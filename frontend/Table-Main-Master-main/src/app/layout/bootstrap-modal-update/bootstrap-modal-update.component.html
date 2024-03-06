@@ -1,0 +1,15 @@
+<div class="modal" *ngIf="isOpen">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" (click)="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
