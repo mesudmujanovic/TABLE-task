@@ -1,14 +1,11 @@
 package com.table;
-
 import com.table.Infrastracture.Dto.CarDto;
 import com.table.Infrastracture.Dto.OwnerDto;
 import com.table.Infrastracture.Request.OwnerRequest;
 import com.table.Infrastracture.Response.OwnerResponse;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OwnerDtoTest {
@@ -36,7 +33,6 @@ public class OwnerDtoTest {
         ownerDto.setFirstName("John");
         ownerDto.setLastName("Doe");
         ownerDto.setPhoneNumber("123456789");
-
         List<CarDto> carDtoList = new ArrayList<>();
         ownerDto.setCarDtoList(carDtoList);
 

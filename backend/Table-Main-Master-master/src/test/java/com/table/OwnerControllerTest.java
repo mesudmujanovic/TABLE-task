@@ -1,5 +1,4 @@
 package com.table;
-
 import com.table.Controllers.OwnerController;
 import com.table.Servise.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,17 +8,10 @@ import org.mockito.MockitoAnnotations;
 import com.table.Infrastracture.Dto.OwnerDto;
 import com.table.Infrastracture.Request.OwnerRequest;
 import com.table.Infrastracture.Response.OwnerResponse;
-import com.table.Servise.OwnerService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 public class OwnerControllerTest {
@@ -70,5 +62,4 @@ public class OwnerControllerTest {
         assertEquals(ownerDto.getLastName(), responseEntity.getBody().getLastName());
         assertEquals(ownerDto.getPhoneNumber(), responseEntity.getBody().getPhoneNumber());
     }
-
 }
