@@ -1,26 +1,34 @@
 <div class="container">
-    <div *ngIf="owner">
-        <h4 class="text-center" [routerLink]="['/']">Home</h4>
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <th>First Name</th>
-                    <td>{{ owner.firstName }}</td>
-                </tr>
-                <tr>
-                    <th>Last Name</th>
-                    <td>{{ owner.lastName }}</td>
-                </tr>
-                <tr>
-                    <th>Phone Number</th>
-                    <td>{{ owner.phoneNumber }}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="table table-bordered" *ngIf="owner.carDtoList && owner.carDtoList.length > 0">
-            <thead>
-                <tr>
+  <div *ngIf="owner">
+    <h4 class="text-center" [routerLink]="['/']">Home</h4>
+    <div class="row">
+      <div class="col-8">
+        <div class="card  mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Owner Information</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>First Name:</strong> {{ owner.firstName }}
+              </li>
+              <li class="list-group-item">
+                <strong>Last Name:</strong> {{ owner.lastName }}
+              </li>
+              <li class="list-group-item">
+                <strong>Phone Number:</strong> {{ owner.phoneNumber }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Car Information</h5>
+            <div *ngIf="owner.carDtoList && owner.carDtoList.length > 0">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <tr>
                     <th>Name</th>
                     <th>Color</th>
                     <th>Number of Seats</th>
@@ -28,10 +36,10 @@
                     <th>Transmission Type</th>
                     <th>Registration Date</th>
                     <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let car of owner.carDtoList">
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let car of owner.carDtoList">
                     <td>{{ car.name }}</td>
                     <td>{{ car.color }}</td>
                     <td>{{ car.numberOfSeats }}</td>
@@ -39,10 +47,17 @@
                     <td>{{ car.transmissionType }}</td>
                     <td>{{ car.registrationDate }}</td>
                     <td>{{ car.price }}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div *ngIf="!(owner.carDtoList && owner.carDtoList.length > 0)">No cars available for this owner.</div>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div *ngIf="!(owner.carDtoList && owner.carDtoList.length > 0)" class="text-center">
+              No cars available for this owner.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

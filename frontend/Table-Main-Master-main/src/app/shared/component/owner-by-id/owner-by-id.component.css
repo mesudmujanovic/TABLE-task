@@ -1,7 +1,38 @@
-h4 {
-  cursor: pointer;
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.table th {
-  background-color: #f0f0f0;
-}/*# sourceMappingURL=owner-by-id.component.css.map */
+.card-title {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+  border-color: transparent;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}

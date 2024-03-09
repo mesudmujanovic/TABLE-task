@@ -1,84 +1,62 @@
 <nav class="navbar navbar-light bg-light">
-    <p class="link" routerLink="/">Home</p>
+  <p class="link" routerLink="/">Home</p>
 </nav>
 <div class="wrapper">
-    <div class="content-wrapper">
-        <div *ngIf="car  as carData" class="card">
-            <div class="car-header">
-                <img class="img-fluid" [src]="getSafeImage(carData)" alt="Car Image">
-                <p class="car-text-name">{{carData.name}}</p>
-                <p class="car-text-color">Color: {{carData.color}}</p>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="car-body col-6">
-                        <p class="car-text"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
-                                enable-background="new 0 0 256 256" xml:space="preserve">
-                                <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
-                                <g>
-                                    <g>
-                                        <path fill="#000000"
-                                            d="M71.3,220.3h76c6.6,0,12-5.4,12-12s-5.4-12-12-12H80.8l-22.1-90.6c-1.6-6.5-8.1-10.4-14.5-8.8c-6.5,1.6-10.4,8.1-8.8,14.5l24.3,99.8C60.9,216.5,65.8,220.3,71.3,220.3z" />
-                                        <path fill="#000000"
-                                            d="M206,246c2.2,0,4.5-0.5,6.6-1.5c7.5-3.6,10.6-12.6,6.9-20.1l-27.4-56.1c-2.5-5.2-7.8-8.5-13.5-8.5h-63.7l-8.5-42.2l18.1,12.5c1.8,1.3,3.9,2.1,6.1,2.5l41.1,6.7c8.2,1.3,15.9-4.2,17.3-12.4c1.3-8.2-4.2-15.9-12.4-17.3l-37.8-6.2l-46-31.8c-5.1-3.5-11.7-3.6-16.8-0.2c-5.1,3.4-7.7,9.5-6.5,15.5l18.3,90.8c1.4,7,7.6,12.1,14.8,12.1h66.6l23.3,47.7C195.1,242.9,200.4,246,206,246z" />
-                                        <path fill="#000000"
-                                            d="M54.2,36c0,14.4,11.6,26,26,26c14.4,0,26-11.6,26-26c0-14.4-11.6-26-26-26C65.8,10,54.2,21.6,54.2,36z" />
-                                    </g>
-                                </g>
-                            </svg>
-                            : {{carData.numberOfSeats}}</p>
-                        <p class="car-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-ev-front" viewBox="0 0 16 16">
-                                <path
-                                    d="M9.354 4.243a.19.19 0 0 0-.085-.218.186.186 0 0 0-.23.034L6.051 7.246a.188.188 0 0 0 .136.316h1.241l-.673 2.195a.19.19 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572z" />
-                                <path
-                                    d="M4.819 2A2.5 2.5 0 0 0 2.52 3.515l-.792 1.848a.8.8 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 8.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413q0-.248-.049-.49l-.335-1.68a1.8 1.8 0 0 0-.964-1.261.8.8 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 2H4.82ZM3.44 3.91A1.5 1.5 0 0 1 4.82 3h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679q.03.146.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155s-4.037-.084-5.592-.155A1.48 1.48 0 0 1 1 9.611v-.413q0-.148.03-.294l.335-1.68a.8.8 0 0 1 .43-.563c.383-.19.685-.511.853-.904z" />
-                            </svg>
-                            {{carData.enginePower}}
-                        </p>
-                    </div>
-                    <div class="car-body col-6">
-                        <p class="car-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-fuel-pump" viewBox="0 0 16 16">
-                                <path
-                                    d="M3 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5z" />
-                                <path
-                                    d="M1 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1 2 2v.5a.5.5 0 0 0 1 0V8h-.5a.5.5 0 0 1-.5-.5V4.375a.5.5 0 0 1 .5-.5h1.495c-.011-.476-.053-.894-.201-1.222a.97.97 0 0 0-.394-.458c-.184-.11-.464-.195-.9-.195a.5.5 0 0 1 0-1q.846-.002 1.412.336c.383.228.634.551.794.907.295.655.294 1.465.294 2.081v3.175a.5.5 0 0 1-.5.501H15v4.5a1.5 1.5 0 0 1-3 0V12a1 1 0 0 0-1-1v4h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1zm9 0a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v13h8z" />
-                            </svg> {{carData.transmissionType}}
-                        </p>
-                        <p class="car-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-sim" viewBox="0 0 16 16">
-                                <path
-                                    d="M2 1.5A1.5 1.5 0 0 1 3.5 0h7.086a1.5 1.5 0 0 1 1.06.44l1.915 1.914A1.5 1.5 0 0 1 14 3.414V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5zM3.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V3.414a.5.5 0 0 0-.146-.353l-1.915-1.915A.5.5 0 0 0 10.586 1z" />
-                                <path
-                                    d="M5.5 4a.5.5 0 0 0-.5.5V6h2.5V4zm3 0v2H11V4.5a.5.5 0 0 0-.5-.5zM11 7H5v2h6zm0 3H8.5v2h2a.5.5 0 0 0 .5-.5zm-3.5 2v-2H5v1.5a.5.5 0 0 0 .5.5zM4 4.5A1.5 1.5 0 0 1 5.5 3h5A1.5 1.5 0 0 1 12 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 11.5z" />
-                            </svg> {{carData.registrationDate}}
-                        </p>
-                        <p class="car-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
-                                <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                                <path
-                                    d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z" />
-                            </svg> {{carData.price}}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-foot">
-                <div class="button-wrapper">
-                    <div class="content-button">
-                        <div>
-                            <app-car-update></app-car-update>
-                        </div>
-                        <div>
-                            <app-car-delete></app-car-delete>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="content-wrapper">
+    <div *ngIf="car  as carData">
+      <div class="row md-col">
+        <div class="col-12 col-md-7 card">
+          <div class="car-header">
+            <img class="img-fluid" [src]="getSafeImage(carData)" alt="Car Image">
+            <p class="car-text-name">{{carData.name}}</p>
+            <p class="car-text-color">Color: {{carData.color}}</p>
+          </div>
         </div>
+        <div class="col-12 col-md-4">
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="car-body">
+                <p class="car-text">
+                  Number of seats
+                  : {{carData.numberOfSeats}}</p>
+                <p class="car-text">
+                  Engine power :
+                  {{carData.enginePower}}
+                </p>
+              </div>
+              <p class="car-text">
+                Transmission type :
+                {{carData.transmissionType}}
+              </p>
+              <p class="car-text">
+                Registration data
+                {{carData.registrationDate}}
+              </p>
+              <p class="car-text">
+                Price :
+                {{carData.price}}</p>
+            </div>
+            <div class="card-foot">
+              <div class="button-wrapper">
+                <div class="content-button">
+                  <div class="update-button">
+                    <app-car-update></app-car-update>
+                  </div>
+                  <div class="delete-button">
+                    <app-car-delete></app-car-delete>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
+
+

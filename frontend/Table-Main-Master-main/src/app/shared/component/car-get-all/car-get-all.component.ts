@@ -12,7 +12,7 @@ import { CarService } from 'src/app/core/service/car.service';
 export class CarGetAllComponent {
   cars$: Observable<Car[]>;
   pagedCars$: Observable<Car[]>;
-  pageSize = 4;
+  pageSize = 9;
   currentPage = 1;
   pages: number[] = [];
   cars: Car[] = [];

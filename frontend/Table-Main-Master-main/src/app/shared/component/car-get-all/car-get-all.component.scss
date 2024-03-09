@@ -9,7 +9,7 @@
         justify-content: flex-end;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 620px) {
         margin: 0;
         padding-top: 40px;
     }
@@ -20,7 +20,7 @@
         border-radius: 5px;
         margin-left: 250px;
 
-        @media (max-width: 686px) {
+        @media (max-width: 620px) {
             margin: 0 !important;
             padding: 0 !important;
             border-radius: 0;
@@ -30,7 +30,7 @@
             width: 650px;
             margin-right: 50px;
 
-            @media (max-width: 686px) {
+            @media (max-width: 620px) {
                 width: 100%;
                 margin: 10px;
             }
@@ -43,7 +43,6 @@
             form {
                 display: flex;
                 align-items: center;
-                /* Centriranje stavki unutar forme */
             }
 
             input[type="text"] {
@@ -68,79 +67,85 @@
                 background-color: #0056b3;
             }
         }
+.col-wrapper{
+  @media (max-width: 610px) {
+    padding: 20px;
+  }
 
-        .card {
-            border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-left: 8px;
-            margin-top: 20px;
-            margin-right: 8px;
+  .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-left: 8px;
+    margin-top: 20px;
+    margin-right: 8px;
+    width: 95%;
 
-            @media (max-width: 686px) {
-                margin: 20px 0 0 0;
-            }
+    @media (max-width: 620px) {
+      width: 100%;
+    }
 
-            .card-head {
-                text-align: start;
-                font-size: 25px;
-                font-weight: bold;
-                margin-bottom: 50px;
 
-                .card-text-name {
-                    color: red;
-                    margin: 10px 0 0 10px;
-                }
+    .card-head {
+      text-align: start;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
 
-                .card-text-color {
-                    text-align: start;
-                    color: black;
-                    margin: 0 0 0 10px;
-                }
+      img {
+        width: 100%;
+        height: 185px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
 
-                @media (max-width: 686px) {
-                    margin: 0;
-                }
-            }
 
-            img {
-                width: 100%;
-                height: 250px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-
-                @media (max-width: 686px) {
-                    border-radius: 0;
-                }
-            }
-
-            .card-body {
-                padding: 0;
-                color: gray;
-                font-weight: bold;
-                text-align: start;
-
-                .card-text {
-                    margin-left: 8px;
-                    margin-top: 8px;
-                }
-            }
-
-            .card-fott {
-                .card-price {
-                    text-align: end;
-                    color: red;
-                    font-size: 30px;
-                    margin-right: 8px;
-                }
-            }
+        @media (max-width: 620px) {
+          border-radius: 0;
         }
+      }
 
-        .col-md-6 {
-            @media (max-width: 920px) {
-                flex: 0 0 auto;
-                width: 100%;
-            }
-        }
+      .card-text-name {
+        color: red;
+        margin: 10px 0 0 10px;
+      }
+
+      .card-text-color {
+        text-align: start;
+        color: black;
+        margin: 0 0 0 10px;
+      }
+
+      @media (max-width: 620px) {
+        margin: 0;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+      color: gray;
+      font-weight: bold;
+      text-align: start;
+
+      .card-text {
+        margin-left: 8px;
+        margin-top: 8px;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .card-fott {
+      .card-price {
+        text-align: end;
+        color: black;
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+}
     }
 }
 
