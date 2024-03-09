@@ -27,11 +27,10 @@ export class CarUpdateComponent {
     private activatedRoute: ActivatedRoute,
     public updateModalService: UpdateModalService,
     public updateDetailsCar: UpdateDetailsCarService) {
-    this.carForm = this.carFormLogicService.initializeCarForm();
   }
 
   onUpdateSubmit(): void {
-    const formData: Car = this.carFormLogicService.prepareFormData(
+    const formData: Car = this.carFormLogicService.prepareUpdateFormData(
       this.carForm,
       this.selectedFile
     );
@@ -69,5 +68,6 @@ export class CarUpdateComponent {
     this.updateModalService.isOpen$.subscribe(isOpen => {
       this.isOpen = isOpen;
     });
+    this.carForm = this.carFormLogicService.initializeUpdateCarForm();
   }
 }

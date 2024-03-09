@@ -12,7 +12,7 @@
 
 @media (max-width: 700px) {
   .navbar {
-    max-width: 100%; /* Promenjeno width u max-width */
+    max-width: 100%;
   }
 
   .link {
@@ -80,15 +80,11 @@
 
   .card-body {
     margin-left: 10px;
-    padding: 0;
-
-    .car-text {
-      border-bottom: 1px solid gray;
-
-    }
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     .car-body {
-
+      
     }
 
     .card-foot {

@@ -21,6 +21,20 @@ export class CarFormLogicService {
     });
   }
 
+  initializeUpdateCarForm(): FormGroup {
+    return this.formBuilder.group({
+      name: ['', Validators.required],
+      image: ['', Validators.required]
+    });
+  }
+
+  prepareUpdateFormData(carForm: FormGroup, selectedFile: File): any {
+    return {
+      name: carForm.get('name').value,
+      image: selectedFile,
+    };
+  }
+
   prepareFormData(carForm: FormGroup, selectedFile: File): Car {
     return {
       name: carForm.get('name').value,
@@ -32,21 +46,5 @@ export class CarFormLogicService {
       image: selectedFile,
       price: carForm.get('price').value
     };
-  }
-
-  setSelectedFile(event): File {
-    return event.target.files[0];
-  }
-
-  updateCarFormData(carForm: FormGroup, car: Car): void {
-    carForm.patchValue({
-      name: car.name,
-      color: car.color,
-      numberOfSeats: car.numberOfSeats,
-      enginePower: car.enginePower,
-      transmissionType: car.transmissionType,
-      registrationDate: car.registrationDate,
-      image: car.image,
-    });
   }
 }
