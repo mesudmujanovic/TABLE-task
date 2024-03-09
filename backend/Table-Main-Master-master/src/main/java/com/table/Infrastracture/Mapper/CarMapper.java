@@ -19,6 +19,7 @@ INSTANCE;
         car.setTransmissionType(carDto.getTransmissionType());
         car.setRegistrationDate(carDto.getRegistrationDate());
         car.setPrice(carDto.getPrice());
+
         return car;
     }
 }

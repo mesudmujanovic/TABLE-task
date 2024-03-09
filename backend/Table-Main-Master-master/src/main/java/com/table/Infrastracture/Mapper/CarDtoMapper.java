@@ -11,6 +11,7 @@ public enum CarDtoMapper implements DtoMapperGeneriks<CarDto, Car> {
     public CarDto apply(Car car) {
         CarDto carDto = new CarDto();
         carDto.setId(car.getId());
+        carDto.setOwnerId(car.getOwner().getId());
         carDto.setName(car.getName());
         carDto.setImage(car.getImage());
         carDto.setColor(car.getColor());

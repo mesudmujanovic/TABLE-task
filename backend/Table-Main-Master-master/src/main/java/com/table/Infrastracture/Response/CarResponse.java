@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class CarResponse {
 
     private Long id;
+    private Long ownerId;
     private String name;
 
     @Lob

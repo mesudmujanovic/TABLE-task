@@ -17,6 +17,7 @@ import java.io.IOException;
 public class CarDto {
 
     private Long id;
+    private Long ownerId;
     private String name;
     @Lob
     @Column(length = 1000000)
@@ -51,6 +52,7 @@ public class CarDto {
     public static CarResponse toResponse(CarDto carDto) {
         CarResponse carResponse = new CarResponse();
         carResponse.setId(carDto.getId());
+        carResponse.setOwnerId(carDto.getOwnerId());
         carResponse.setName(carDto.getName());
         carResponse.setImage(carDto.getImage());
         carResponse.setColor(carDto.getColor());
